@@ -12,6 +12,9 @@
       "js": ["scripts/content.js", "scripts/jquery.min.js"]
     }
   ],
+  "web_accessible_resources": [
+    "scripts/scrape-betfair.js"
+  ],
   "background": {
     "scripts": ["scripts/background.js"],
     "persistent": false

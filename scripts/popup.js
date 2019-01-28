@@ -1,10 +1,8 @@
-//popup.js runs in the popup and enables a user to interact with content.js through links that send messages
+// popup.js runs in the popup and enables a user to interact with content.js through links that send messages
+console.log("Match with Betfair: popup.js loaded");
 
-/*global chrome*/
 let analyseLink = document.getElementById("analyse");
 let fetchLink = document.getElementById("fetch");
-
-console.log("Match with Betfair: popup.js loaded");
 
 sendToContent = function(message) {
   chrome.tabs.query({ active: true, currentWindow: true }, function(tab){

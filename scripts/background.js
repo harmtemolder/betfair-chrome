@@ -1,4 +1,7 @@
-//background.js is used to enable and disable the icon when a page's URL matches the one in the condition
+// background.js runs in the background of Chrome and is used to enable and
+// disable the icon when a page's URL matches the one in the condition
+
+// TODO Clean this script up
 
 console.log("Match with Betfair: background.js loaded");
 
@@ -23,12 +26,11 @@ chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
 function checkForValidUrl(tabId, changeInfo, tab) {
   if (tab.url.indexOf('.betfair.com') > -1)
     chrome.pageAction.show(tabId);
-};
-
+}
 chrome.tabs.onUpdated.addListener(checkForValidUrl);
 
 chrome.pageAction.onClicked.addListener(function(tab){
-  var myName = tab.url.split(".")[0].slice(7);
-  if (myName != "www") //ignore main site
+  let myName = tab.url.split(".")[0].slice(7);
+  if (myName !== "www") //ignore main site
     chrome.tabs.update(tab.id, {url: "http://foo.com/foo.html?t=" + myName});
 });
