@@ -1,3 +1,7 @@
+//background.js is used to enable and disable the icon when a page's URL matches the one in the condition
+
+console.log("Match with Betfair: background.js loaded");
+
 chrome.runtime.onInstalled.addListener(function () {
   console.log("Match with Betfair: Installed succesfully");
 });
