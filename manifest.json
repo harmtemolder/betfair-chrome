@@ -1,0 +1,27 @@
+{
+  "name": "Match with Betfair",
+  "version": "0.1",
+  "description": "Query the Betfair API and try to find events (and their odds) matching the events on screen (e.g. on Guts).",
+  "icons": {
+    "256": "images/betfair-256.png"
+  },
+  "permissions": ["<all_urls>", "tabs", "activeTab", "declarativeContent", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.betfair.com/*"],
+      "js": ["scripts/content.js", "scripts/jquery.min.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["scripts/background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "pages/popup.html",
+    "default_icon": {
+      "256": "images/betfair-256.png"
+    }
+  },
+  "options_page": "pages/options.html",
+  "manifest_version": 2
+}
