@@ -47,3 +47,13 @@ scrapeEvents = function() {
 };
 
 console.log(scrapeEvents());
+
+// https://docs.developer.betfair.com/visualisers/api-ng-sports-operations/
+// TODO Use Betfair Exchange API's listMarketCatalogue to search for data-event
+// * Use filter = {'marketTypeCodes': 'MATCH_ODDS}
+// * Use maxResults = 1000
+// * Use marketProjection = ['RUNNER_METADATA']
+// TODO Use the selection IDs from listMarketCatalogue's output as input for listRunnerBook
+// * Use priceProjection = {'priceData':['EX_BEST_OFFERS']}
+// TODO Match the odds in the output to the ones on the page
+// TODO Maybe cache Betfair Exchange API data in a database somewhere? Not too long, obviously
